@@ -1,0 +1,45 @@
+
+.add{
+	width:600px;
+	margin:30px auto;
+}
+.add textarea{
+	/*border:0px background:none;*/
+	/*background:transparent;*/
+	/*color:#000;*/
+	/*border-style:none;*/
+	border: 1px solid;
+	/*background: #FF3366;*/
+	width:100%;
+}
+.add a{
+	float:right;
+}
+.add .user{
+	/*color:#000;*/
+	/*background-color:transparent;*/
+	/*border:1px;*/
+	margin-left:0;
+	/*float:left;*/
+}
+.add .bnt{
+	float:right;
+	/*margin-left:100%;*/
+	/*padding:auto,0,auto,auto;*/
+}
+.add span{
+	color:blue;
+}
+.msg{
+	width:600px;
+	margin:30px auto;
+}
+.msg .item{
+	color:#000;
+	/*background:red;*/
+	margin:20px auto;
+	border:solid 1px #000;
+}
+.msg .item .date{
+	float:right;
+}
