@@ -1,8 +1,7 @@
 <?php
-	
-	$conn = mysql_connect("localhost", "root", "qyffxzh152505");
+
+	$conn = mysqli_connect("localhost", "root", "qyffxzh152505", "uheng");
 	if(!$conn)
-		die("连接数据库错误：".mysql_error());
-	mysql_select_db("uheng");
-	mysql_query("set names 'utf8'");  
+		die("连接数据库错误：".mysqli_error());
+	mysqli_query($conn, "set names 'utf8'");
 ?>

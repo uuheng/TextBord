@@ -2,32 +2,36 @@
 	session_start();
 	// var_dump($_SESSION['user']);
 	include_once("sqlcon.php");
-	$sql = "SELECT * FROM msg ORDER BY up_time DESC;";
-	$res = mysql_query($sql, $conn);
-	$rows = array();
+	$sql = "SELECT * FROM msg ORDER BY up_time DESC";
+	$res = mysqli_query($conn, $sql);
 	// var_dump($res);
-	while($row = mysql_fetch_array($res, MYSQL_ASSOC)){
+	$rows = array();
+	while($row = mysqli_fetch_assoc($res))
 		$rows[] = $row;
-	}
 	// var_dump($rows);
-	mysql_free_result($res);
-	mysql_close($conn);
+	mysqli_free_result($res);
+	mysqli_close($conn);
 	// var_dump($rows);
 ?>
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf8"/>
+		<meta charset="utf-8"/>
 		<link rel="stylesheet" type="text/css" href="css/main.css" />
+		<link rel="stylesheet" type="text/css" href="css/public.css" />
 	</head>
-	<body background="css/imgs/2.jpg">
+	<body>
 	<body>
 		<!-- <img src="back1.jpg"/> -->
-		<div class="add">
+		<header>
+			asdfsdf
+		</header>
+		<div class="content">
+		<div class="add-box">
 			<?php if(!isset($_SESSION['user'])) { ?>
 			<a href="login.php">登录</a>
 			<?php }else{ ?>
-			<a href="logout.php">当前用户：<?php echo $_SESSION['user'] ?>  退出</a>
+			当前用户：<?php echo $_SESSION['user'] ?>  <a href="logout.php">退出</a>
 			<?php } ?>
 			<form action="insert.php" method="post">
 				<textarea name="text"></textarea>
@@ -39,10 +43,9 @@
 				<?php } ?>
 			</form>
 		</div>
-		<div class="msg">
-			<?php 
+		<div class="msg-box">
+			<?php
 				foreach($rows as $item){
-					echo $item['id'];
 			?>
 			<div class="item">
 				<span><?php echo $item['author'] ?></span>
@@ -55,6 +58,7 @@
 			<?php
 				}
 			?>
+		</div>
 		</div>
 	</body>
 </html>

@@ -1,0 +1,6 @@
+body{
+    background: #666 url(../imgs/2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: fixed;
+}
